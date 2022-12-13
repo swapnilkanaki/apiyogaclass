@@ -23,17 +23,9 @@
 - It payment api
 - it takes api with < user_id>/< date> in POST
 
-foreign 
+ 
 Database :
-		    Foreign
-    |    User    |    Key   |    Batch    |
-    | ---------- |  <-----> | ----------- |
-    |    Name    |          |  batches_id |
-    |    Age     |          |    fees     |
-    |   email    |          |   batch     |
-    |   mobile   |          |    date     |
-    |  password  | 
-
+![]([https://github.com/swapnilkanaki/apiyogaclass/blob/main/login.jpeg](https://github.com/swapnilkanaki/apiyogaclass/blob/master/database.jpeg))
 
 
 ####- yogaplatform app
