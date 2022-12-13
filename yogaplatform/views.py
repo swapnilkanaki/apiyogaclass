@@ -5,10 +5,8 @@ from admissionapi.models import User,Batches
 import requests
 import json
 
-
 # Create your views here.
-domen="https://yogaclasses-m9ab.onrender.com/"
-
+domain="http://127.0.0.1:8000/"
 
 #Login View api Userd (userloginapi)
 def login(request):
@@ -19,7 +17,7 @@ def login(request):
                 'email': email,
                 'password': password                      
                 }
-        responce = requests.post(domen+'userloginapi/',data = pload)
+        responce = requests.post(domain+'userloginapi/',data = pload)
         temp=json.loads(str(responce.text))
         if temp.get("status"):    
             data = User.objects.get(email=email, password=password)     
@@ -44,7 +42,7 @@ def register(request):
                     "mobile": request.POST.get('mobile'),
                     "password": password                        
                     }
-            responce = requests.post(domen+'userregisterapi/',data = pload)
+            responce = requests.post(domain+'userregisterapi/',data = pload)
             temp=json.loads(str(responce.text))
             if temp.get("status"): 
                 data = User.objects.get(email=email, password=password)
@@ -70,7 +68,7 @@ def Addmisson(request):
                     "date": request.POST.get('date'),
                     "fees": 500                   
                     }
-            responce = requests.post(domen+'admissionapi/{}'.format(user_id),data = pload)
+            responce = requests.post(domain+'admissionapi/{}'.format(user_id),data = pload)
             temp=json.loads(str(responce.text))
             if temp.get("status"): 
                 return redirect('addmisson')
