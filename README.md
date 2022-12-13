@@ -1,5 +1,6 @@
 ### Django yogacls
 **In This tow apps are created **
+
 ####- admissionapi app
 
 (admissionapi) app is mainly create api's ;
@@ -22,11 +23,25 @@
 - It payment api
 - it takes api with < user_id>/< date> in POST
 
+foreign 
+Database :
+		    Foreign
+    |    User    |    Key   |    Batch    |
+    | ---------- |  <-----> | ----------- |
+    |    Name    |          |  batches_id |
+    |    Age     |          |    fees     |
+    |   email    |          |   batch     |
+    |   mobile   |          |    date     |
+    |  password  | 
+
+
 
 ####- yogaplatform app
+
 (yogaplatform) use of API
 
 #####/yogaplatform/views.py is main domain on localhost
+
 ```html
 domain="http://127.0.0.1:8000/"+(api's)
 ```
